@@ -1,25 +1,61 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import Header from './components/Header';
+import Song from './components/Song';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  componentDidMount() {
+    console.log('app cargada y lista');
+  }
+
+  render() {
+    const songs = [
+      { title: 'Only', artist: 'Nin Inch Nails', duration: '3:45' },
+      { title: 'I´ll Be Around', artist: 'The Growlers', duration: '4:10' },
+      { title: 'Mahal', artist: 'Glass Beam', duration: '2:58' }
+    ];
+
+    return (
+      <div className="App">
+        <Header />
+        <div className="song-list">
+          {songs.map((song, index) => (
+            <Song
+              key={index}
+              title={song.title}
+              artist={song.artist}
+              album={song.album}
+              duration={song.duration}
+            />
+          ))}
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

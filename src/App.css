@@ -1,38 +1,42 @@
-.App {
+* {
+  background-color: #000;
+}
+header {
+  background-color: #686868;
+  margin-top: 0px;
+  padding: 40px;
+}
+h1 {
+  background-color: #686868;
   text-align: center;
+  color: #ffff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.song-list {
+  color: #ffff;
+  height: 100%;
+  justify-items: center;
+  
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+p {
+  color: #686868;
+  
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.song-card {
+  padding: 20px;
+  margin: 40px;
+  width: 80%;
+  border: 2px, solid #ffff;
+  border-radius: 20px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 1rem;
+  box-sizing: border-box;
+  justify-content: space-between;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
+

@@ -1,0 +1,40 @@
+img {
+    width: 8%;
+    border-radius: 50%;
+}
+
+
+.songList {
+    display: flex;
+    padding: 20px;
+    width: 90%;
+    justify-content: center;
+}
+
+.infoSong {
+    display: flex;
+    padding: 5px;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button {
+    border-radius: 15px;
+    font-size: 20px;
+    align-self: center;
+    background-color: transparent;
+    font-weight: bolder;
+    height: 60px;
+    width: 152px;
+    border: none;
+    transition: all 0.3s ease;
+    color: #fff;
+    
+}
+button:hover {
+    background-color: rgb(189, 189, 189);
+    border: 1px solid #ffffff;
+    transition: all 0.3s ease;
+    color: #000;
+}

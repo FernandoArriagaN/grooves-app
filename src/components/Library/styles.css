@@ -1,0 +1,10 @@
+.library {
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2%;
+    box-sizing: border-box;
+    border-radius: 20px;
+}

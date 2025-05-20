@@ -1,61 +1,50 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import Header from './components/Header';
 import Song from './components/Song';
-import './App.css';
+import SearchResults from './components/SearchResults';
+import './components/Header/styles.css'
+import './components/SearchResults/styles.css';
+import './components/Song/styles.css';
+import './components/Library/styles.css'
+import Library from './components/Library';
+import Only from './assets/onlyCoverAlbum.jpg';
+import Growlers from './assets/theGrowlersCoverAlbum.jpg';
+import GlassBeams from './assets/glassBeamCoverAlbum.jpg';
 
-class App extends Component {
-  componentDidMount() {
-    console.log('app cargada y lista');
-  }
 
-  render() {
-    const songs = [
-      { title: 'Only', artist: 'Nin Inch Nails', duration: '3:45' },
-      { title: 'I´ll Be Around', artist: 'The Growlers', duration: '4:10' },
-      { title: 'Mahal', artist: 'Glass Beam', duration: '2:58' }
-    ];
+function App ()  {
+  
+    const [searchResults, setSearchResults] = useState ([
+      { title: 'Only', artist: 'Nin Inch Nails', duration: '3:45', id:'1', image: Only },
+      { title: 'I´ll Be Around', artist: 'The Growlers', duration: '4:10', id:'2', image: Growlers },
+      { title: 'Mahal', artist: 'Glass Beam', duration: '2:58', id:'3', image: GlassBeams}
+    ]); 
 
+    const [library, setLibrary] = useState ([]);
+      
+    useEffect(() => {
+      console.log('La biblioteca se actualizado:');
+    }, [library]);
+
+
+    const handleAddToLibrary = song => {
+      setLibrary(prev => [...prev, song]);
+    }
+
+    
+    
     return (
-      <div className="App">
+      <main className="App">
         <Header />
-        <div className="song-list">
-          {songs.map((song, index) => (
-            <Song
-              key={index}
-              title={song.title}
-              artist={song.artist}
-              album={song.album}
-              duration={song.duration}
-            />
-          ))}
-        </div>
-      </div>
+        
+        <SearchResults songs={searchResults}
+        onAddToLibrary={handleAddToLibrary} />
+        <Library songs={library} />
+      </main>
     );
-  }
+  
 }
 
 export default App;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
